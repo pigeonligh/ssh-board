@@ -26,7 +26,7 @@ ENV SSH_USERS noname:1000:1000:/bin/ssh-board
 
 RUN echo "" >> /etc/authorized_keys/noname
 RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config 
-
+RUN echo "" > /etc/motd
 ADD start.sh /bin/
 
 CMD ["sh", "/bin/start.sh"]
