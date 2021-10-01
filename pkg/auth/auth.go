@@ -11,11 +11,8 @@ type Auth struct {
 	PublicKey string
 }
 
-func ApplyAuth(auths []Auth, app bool) error {
+func ApplyAuth(auths []Auth) error {
 	flag := os.O_WRONLY | os.O_CREATE
-	if app {
-		flag = flag | os.O_APPEND
-	}
 	file, err := os.OpenFile(AuthPath, flag, os.ModePerm)
 	if err != nil {
 		return err
