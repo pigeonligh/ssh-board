@@ -22,11 +22,14 @@ func main() {
 
 	menu := board.NewMenu(username, boards)
 	prog := tea.NewProgram(menu, tea.WithAltScreen())
-	if err := prog.Start(); err != nil {
-		fmt.Printf("error: %v\n", err)
-		return
-	}
-	if menu.IsOK() {
+	for {
+		if err := prog.Start(); err != nil {
+			fmt.Printf("error: %v\n", err)
+			return
+		}
+		if !menu.IsOK() {
+			break
+		}
 		menu.Play()
 	}
 }
