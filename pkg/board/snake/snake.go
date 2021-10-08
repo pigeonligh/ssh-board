@@ -8,7 +8,7 @@ func (b *snakeBoard) Name() string {
 	return "Snake"
 }
 
-func (b *snakeBoard) PlayOrDie(username string) {
+func (b *snakeBoard) RunOrDie(username string) {
 	snake.NewGame().Start()
 }
 

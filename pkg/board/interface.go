@@ -1,6 +1,6 @@
 package board
 
-type Board interface {
+type MenuItem interface {
 	Name() string
-	PlayOrDie(string) // username
+	RunOrDie(string) // username
 }

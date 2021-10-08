@@ -8,12 +8,12 @@ import (
 
 type MenuModel struct {
 	username string
-	choices  []Board
+	choices  []MenuItem
 	cursor   int
 	ok       bool
 }
 
-func NewMenu(username string, boards []Board) *MenuModel {
+func NewMenu(username string, boards []MenuItem) *MenuModel {
 	return &MenuModel{
 		username: username,
 		choices:  boards,
@@ -75,6 +75,6 @@ func (m *MenuModel) IsOK() bool {
 	return m.ok
 }
 
-func (m *MenuModel) Play() {
-	m.choices[m.cursor].PlayOrDie(m.username)
+func (m *MenuModel) Run() {
+	m.choices[m.cursor].RunOrDie(m.username)
 }

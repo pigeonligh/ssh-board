@@ -16,7 +16,7 @@ func main() {
 		return
 	}
 
-	boards := []board.Board{
+	boards := []board.MenuItem{
 		snake.New(),
 	}
 
@@ -30,6 +30,6 @@ func main() {
 		if !menu.IsOK() {
 			break
 		}
-		menu.Play()
+		menu.Run()
 	}
 }

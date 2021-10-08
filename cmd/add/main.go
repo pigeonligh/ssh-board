@@ -14,6 +14,8 @@ type Config struct {
 }
 
 func initViper() {
+	_ = os.MkdirAll("/etc/sshboard/", os.ModePerm)
+
 	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")
 	viper.AddConfigPath("/etc/sshboard/")
